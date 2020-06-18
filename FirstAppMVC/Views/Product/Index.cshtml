@@ -1,0 +1,207 @@
+﻿@model FirstAppMVC.Models.ProductFilter
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Search</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CurrentPage" value="@Model.CurrentPage" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceFrom" class="control-label"></label>
+                <input asp-for="PriceFrom" class="form-control" />
+                <span asp-validation-for="PriceFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTo" class="control-label"></label>
+                <input asp-for="PriceTo" class="form-control" />
+                <span asp-validation-for="PriceTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="Model.Categories"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandId" class="control-label"></label>
+                <select asp-for="BrandId" class="form-control" asp-items="Model.Brands">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<h3>Products</h3>
+<hr />
+<a method="get" asp-controller="Product" asp-action="CreateProduct">Create Product</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.ActionLink("Наименование", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = SortType.Name,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = Model.CurrentPage
+                    })
+            </th>
+            <th>
+                @Html.ActionLink("Бренд", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = SortType.Brand,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = Model.CurrentPage
+                    })
+            </th>
+            <th>
+                @Html.ActionLink("Цена", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = SortType.Price,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = Model.CurrentPage
+                    })
+            </th>
+            <th>
+                @Html.ActionLink("Категория", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = SortType.Category,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = Model.CurrentPage
+                    })
+            </th>
+            <th>
+                @Html.ActionLink("Количество заказов", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = SortType.OrdersCount,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = Model.CurrentPage
+                    })
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Order" asp-controller="Order" asp-route-id="@item.Id">
+                        @item.Name
+                    </a>
+                </td>
+                <td>
+                    @item.Brand
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.Category
+                </td>
+                <td>
+                    @item.OrdersCount
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-xl-center">
+    @if (Model.Paging.HavePreviousPage)
+        @Html.ActionLink("<< Назад", "Index", "Product",
+            new ProductFilter
+            {
+                Name = Model.Name,
+                BrandId = Model.BrandId,
+                CategoryId = Model.CategoryId,
+                SortDirection = Model.SortDirection,
+                SortType = Model.SortType,
+                PriceFrom = Model.PriceFrom,
+                PriceTo = Model.PriceTo,
+                CurrentPage = Model.CurrentPage - 1
+            })
+
+    <div class="d-inline mr-3 ml-3">
+        @for (int i = 1; i <= Model.Paging.PagesCount; i++)
+        {
+            <b class="mr-2">
+                 @Html.ActionLink($"{i}", "Index", "Product",
+                     new ProductFilter
+                     {
+                         Name = Model.Name,
+                         BrandId = Model.BrandId,
+                         CategoryId = Model.CategoryId,
+                         SortDirection = Model.SortDirection,
+                         SortType = Model.SortType,
+                         PriceFrom = Model.PriceFrom,
+                         PriceTo = Model.PriceTo,
+                         CurrentPage = i
+                     })
+            </b>
+        }
+    </div>
+    
+
+    @if (Model.Paging.HaveNextPage)
+        @Html.ActionLink("Вперед >>", "Index", "Product",
+             new ProductFilter
+             {
+                Name = Model.Name,
+                BrandId = Model.BrandId,
+                CategoryId = Model.CategoryId,
+                SortDirection = Model.SortDirection,
+                SortType = Model.SortType,
+                PriceFrom = Model.PriceFrom,
+                PriceTo = Model.PriceTo,
+                CurrentPage = Model.CurrentPage + 1
+             })
+
+</div>
+
+
+

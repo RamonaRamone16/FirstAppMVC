@@ -1,0 +1,41 @@
+﻿@model FirstAppMVC.Models.OrderCreateModel
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Order</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="OrderCreate" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="ProductId" type="hidden" value="@Model.ProductId" />
+            <p>Product Name: @Model.ProductName</p>
+            <p>Brand: @Model.Brand</p>
+            <p>Price: @Model.ProductPrice</p>
+            <div class="form-group">
+                <label asp-for="Count" class="control-label"></label>
+                <input asp-for="Count" class="form-control" />
+                <span asp-validation-for="Count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Order" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,17 @@
+﻿@model List<FirstAppMVC.Models.CategoryModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Categories</h1>
+<hr />
+<a method="get" asp-controller="Category" asp-action="CreateCategory">Create Category</a>
+<hr />
+<div>
+    @foreach (FirstAppMVC.Models.CategoryModel category in Model)
+    {
+        <p>@category.Name</p>
+    }
+</div>
+

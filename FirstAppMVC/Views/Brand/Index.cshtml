@@ -1,0 +1,17 @@
+﻿@model List<FirstAppMVC.Models.BrandModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Brands</h1>
+<hr />
+<a method="get" asp-controller="Brand" asp-action="CreateBrand">Create Brand</a>
+<hr />
+<div>
+    @foreach (FirstAppMVC.Models.BrandModel brand in Model)
+    {
+        <p>@brand.Name</p>
+    }
+</div>
+
