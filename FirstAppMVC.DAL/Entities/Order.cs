@@ -12,5 +12,7 @@ namespace FirstAppMVC.DAL.Entities
         public decimal Amount { get; set; }
         public DateTime Data { get; set; }
         public string Description { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

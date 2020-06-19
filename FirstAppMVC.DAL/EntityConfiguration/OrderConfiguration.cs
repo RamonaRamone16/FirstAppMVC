@@ -35,6 +35,11 @@ namespace FirstAppMVC.DAL.EntityConfiguration
                 .WithMany(o => o.Orders)
                 .HasForeignKey(o => o.ProductId)
                 .IsRequired();
+
+            builder.HasOne(o => o.User)
+                .WithMany(o => o.Orders)
+                .HasForeignKey(o => o.UserId)
+                .IsRequired();
         }
     }
 }

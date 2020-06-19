@@ -13,7 +13,7 @@ namespace FirstAppMVC.DAL.Repositories
             entities = context.Orders;
         }
 
-        public IEnumerable<Order> GetAllWithProductsAndCustomers()
+        public IEnumerable<Order> GetAllWithProducts()
         {
             return entities.Include(o => o.Product).ThenInclude(o => o.Brand);
         }

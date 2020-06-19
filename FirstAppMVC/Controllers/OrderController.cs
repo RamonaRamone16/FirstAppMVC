@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using FirstAppMVC.DAL.Entities;
 using FirstAppMVC.Models;
 using FirstAppMVC.Services.Orders;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstAppMVC.Controllers
@@ -9,22 +12,27 @@ namespace FirstAppMVC.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
+        private readonly UserManager<User> _userManager;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, UserManager<User> userManager)
         {
             if (orderService == null)
                 throw new ArgumentNullException(nameof(orderService));
+            if (userManager == null)
+                throw new ArgumentNullException(nameof(userManager));
             _orderService = orderService;
+            _userManager = userManager;
         }
 
 
         [HttpGet]
-        public IActionResult Index(OrdersFilter ordersFilter)
+        public async Task<IActionResult> Index(OrdersFilter ordersFilter)
         {
             try
             {
+                User user = await _userManager.GetUserAsync(User);
                 List<OrderModel> orders = _orderService
-                    .SearchOrderModels(ordersFilter);
+                    .SearchOrderModels(ordersFilter, user);
                 ordersFilter.Orders = orders;
 
                 return View(ordersFilter);
@@ -50,9 +58,10 @@ namespace FirstAppMVC.Controllers
 
 
         [HttpPost]
-        public IActionResult OrderCreate(OrderCreateModel order)
+        public async Task<IActionResult> OrderCreate(OrderCreateModel order)
         {
-            _orderService.CreateOrder(order);
+            User user = await _userManager.GetUserAsync(User);
+            _orderService.CreateOrder(order, user);
             return RedirectToAction("Index");
         }
     }

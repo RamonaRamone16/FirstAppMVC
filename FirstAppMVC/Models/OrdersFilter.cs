@@ -8,13 +8,11 @@ namespace FirstAppMVC.Models
 {
     public class OrdersFilter
     {
-        [Display(Name = "Customer Name")]
-        public string CustomerName { get; set; }
 
         [Display(Name = "Price From")]
         public decimal? PriceFrom { get; set; }
 
-        [Display(Name = "Price From")]
+        [Display(Name = "Price To")]
         public decimal? PriceTo { get; set; }
         public List<OrderModel> Orders { get; set; }
     }

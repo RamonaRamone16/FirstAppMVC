@@ -10,7 +10,8 @@ namespace FirstAppMVC.Services.Basket
 {
     public interface IBasketService
     {
-        Task AddToBasket(int productId, User user);
+        Task AddToBasketAsync(int productId, User user);
         List<BasketItem> GetBasketItems(User user);
+        Task DeleteAsync(int productId, User user);
     }
 }

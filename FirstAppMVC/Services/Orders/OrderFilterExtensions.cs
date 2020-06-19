@@ -6,14 +6,6 @@ namespace FirstAppMVC.Services.Orders
 {
     public static class OrderFilterExtensions
     {
-        //public static IEnumerable<Order> ByCustomerName(this IEnumerable<Order> productOrderModels,
-        //    string clientName)
-        //{
-        //    if (!string.IsNullOrWhiteSpace(clientName))
-        //        return productOrderModels.Where(o => o.Customer.Name.Contains(clientName));
-        //    return productOrderModels;
-        //}
-
         public static IEnumerable<Order> ByPriceFrom(this IEnumerable<Order> productOrderModels,
             decimal? priceFrom)
         {

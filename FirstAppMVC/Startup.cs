@@ -57,7 +57,7 @@ namespace FirstAppMVC
             services.AddSingleton<IProductService, ProductService>();
             services.AddSingleton<ICategoryService, CategoryService>();
             services.AddSingleton<IBrandService, BrandService>();
-            services.AddSingleton<IOrderService, OrderService>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IBasketService, BasketService>();
 
             Mapper.Initialize(c => c.AddProfile(new MappingProfile()));

@@ -10,6 +10,7 @@ namespace FirstAppMVC.Models
     public class OrderCreateModel
     {
         public int ProductId { get; set; }
+        public int UserId { get; set; }
 
         [Display(Name = "Product Name")]
         public string ProductName { get; set; }
@@ -18,10 +19,6 @@ namespace FirstAppMVC.Models
 
         [Display(Name = "Product Price")]
         public decimal ProductPrice { get; set; }
-
-        [Display(Name="Customer Name")]
-        public int CustomerId { get; set; }
-        public SelectList Customers { get; set; }
 
         [Required(ErrorMessage = "Укажите количество")]
         [Range(1, Double.PositiveInfinity, ErrorMessage = "Количество не может быть отрицательным или нулевым")]

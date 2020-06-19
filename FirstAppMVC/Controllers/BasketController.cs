@@ -29,11 +29,18 @@ namespace FirstAppMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            User user = await _userManager.GetUserAsync(User);
+            try
+            {
+                User user = await _userManager.GetUserAsync(User);
+                List<BasketItem> basketItems = _basketService.GetBasketItems(user);
 
-            List<BasketItem> basketItems = _basketService.GetBasketItems(user);
-
-            return View(basketItems);
+                return View(basketItems);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e);
+            }
+           
         }
 
         [Authorize]
@@ -49,13 +56,29 @@ namespace FirstAppMVC.Controllers
             try
             {
                 User user = await _userManager.GetUserAsync(User);
-                await _basketService.AddToBasket(productId.Value, user);
+                await _basketService.AddToBasketAsync(productId.Value, user);
                 return RedirectToAction("Index");
             }
             catch (Exception e)
             {
                 return StatusCode(500, e);
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete (int? productId)
+        {
+            if (!productId.HasValue)
+            {
+                ViewBag.BadRequestMassage = "Product Id can not be NULL";
+                return View("BadRequest");
+            }
+
+            User user = await _userManager.GetUserAsync(User);
+
+            await _basketService.DeleteAsync(productId.Value, user);
+
+            return RedirectToAction("Index");
         }
     }
 }

@@ -7,6 +7,6 @@ namespace FirstAppMVC.DAL.Repositories
 {
     public interface IOrderRepository : IRepository<Order>
     {
-        IEnumerable<Order> GetAllWithProductsAndCustomers();
+        IEnumerable<Order> GetAllWithProducts();
     }
 }

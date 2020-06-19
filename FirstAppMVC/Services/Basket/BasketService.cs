@@ -27,7 +27,7 @@ namespace FirstAppMVC.Services.Basket
             _userManager = userManager;
         }
 
-        public async Task AddToBasket(int productId, User user)
+        public async Task AddToBasketAsync(int productId, User user)
         {
             using (UnitOfWork unitOfWork = _unitOfWorkFactory.Create())
             {
@@ -45,6 +45,18 @@ namespace FirstAppMVC.Services.Basket
             }
         }
 
+        public async Task DeleteAsync(int productId, User user)
+        {
+            List<BasketItemCreate> basketItemCreates =
+                    JsonConvert.DeserializeObject<List<BasketItemCreate>>(user.Basket);
+
+            BasketItemCreate basketItemCreate = basketItemCreates.FirstOrDefault(p => p.ProductId == productId);
+
+            basketItemCreates.Remove(basketItemCreate);
+
+            user.Basket = JsonConvert.SerializeObject(basketItemCreates);
+            await _userManager.UpdateAsync(user);
+        }
 
         public List<BasketItem> GetBasketItems(User user)
         {
@@ -73,14 +85,14 @@ namespace FirstAppMVC.Services.Basket
                         basketItems.Add(basketItem);
                     }
                 }
-                
+
                 return basketItems;
             }
         }
 
+
         private List<BasketItemCreate> UpdateBasket(int productId, string basket)
         {
-
             try
             {
                 List<BasketItemCreate> basketItems =
@@ -107,5 +119,6 @@ namespace FirstAppMVC.Services.Basket
         {
             return new List<BasketItemCreate>() { new BasketItemCreate(productId, 1) };
         }
+
     }
 }

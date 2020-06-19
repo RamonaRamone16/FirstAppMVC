@@ -8,5 +8,6 @@ namespace FirstAppMVC.DAL.Entities
     public class User : IdentityUser<int>
     {
         public string Basket { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

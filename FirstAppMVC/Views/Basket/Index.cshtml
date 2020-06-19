@@ -7,7 +7,7 @@
 <h1>Корзина</h1>
 
 
-@if (Model != null)
+@if (Model.Any())
 {
 <table class="table">
     <thead>
@@ -32,30 +32,36 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.ProductName
-                </td>
-                <td>
-                    @item.Brand
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    @item.BasketsCount
-                </td>
-                <td>
-                    @item.Amount
-                </td>
-                <td>
-                    <form asp-action="Order" method="get" asp-controller="Order">
-                        <input type="hidden" name="productId" value="@item.ProductId" />
-                        <input type="hidden" name="basketsCount" value="@item.BasketsCount" />
-                        <input type="submit" value="Заказать" />
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @item.ProductName
+            </td>
+            <td>
+                @item.Brand
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.BasketsCount
+            </td>
+            <td>
+                @item.Amount
+            </td>
+            <td>
+                <form asp-action="Order" method="get" asp-controller="Order">
+                    <input type="hidden" name="productId" value="@item.ProductId" />
+                    <input type="hidden" name="basketsCount" value="@item.BasketsCount" />
+                    <input type="submit" value="Заказать" />
+                </form>
+            </td>
+            <td>
+                <form asp-action="Delete" method="post" asp-controller="Basket">
+                    <input type="hidden" name="productId" value="@item.ProductId" />
+                    <input type="submit" value="Удалить" />
+                </form>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
