@@ -18,5 +18,6 @@ namespace FirstAppMVC.DAL.Repositories
         {
             return entities.Include(p => p.Brand).Include(p => p.Category).Include(p => p.Orders).ToList();
         }
+
     }
 }

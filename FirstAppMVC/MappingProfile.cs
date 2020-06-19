@@ -9,6 +9,7 @@ namespace FirstAppMVC
         public MappingProfile()
         {
             ProductToProductModelMap();
+            ProductToBasketItemMap();
             ProductCreateModelToProductMap();
             CategoryToCategoryModelMap();
             CategoryCreateModelToCategoryMap();
@@ -27,6 +28,16 @@ namespace FirstAppMVC
                 .ForMember(to => to.Category, from => from.MapFrom(p => p.Category.Name))
                 .ForMember(to => to.OrdersCount, from => from.MapFrom(p => p.Orders.Count));
         }
+
+        public void ProductToBasketItemMap()
+        {
+            CreateMap<Product, BasketItem>()
+                .ForMember(to => to.ProductId, from => from.MapFrom(p => p.Id))
+                .ForMember(to => to.ProductName, from => from.MapFrom(p => p.Name))
+                .ForMember(to => to.Brand, from => from.MapFrom
+                (p => p.BrandId == null ? BasketItem.NoBrand : p.Brand.Name));
+        }
+
         public void ProductCreateModelToProductMap()
         {
             CreateMap<ProductCreateModel, Product>();
@@ -78,5 +89,6 @@ namespace FirstAppMVC
                 .ForMember(to => to.Brand, from => from.MapFrom(p => p.Product.Brand.Name))
                 .ForMember(to => to.ProductPrice, from => from.MapFrom(p => p.Product.Price));
         }
+
     }
 }

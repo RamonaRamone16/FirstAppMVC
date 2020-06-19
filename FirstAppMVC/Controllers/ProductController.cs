@@ -12,6 +12,8 @@ namespace FirstAppMVC.Controllers
 
         public ProductController(IProductService productService)
         {
+            if (productService == null)
+                throw new ArgumentNullException(nameof(productService));
             _productService = productService;
         }
 

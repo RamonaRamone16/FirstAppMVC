@@ -37,14 +37,14 @@ namespace FirstAppMVC.Controllers
 
         [HttpGet]
         [Route("Order/{id}")]
-        public IActionResult Order(int? id)
+        public IActionResult Order(int? productId, int? basketsCount)
         {
-            if (!id.HasValue)
+            if (!productId.HasValue)
             {
                 ViewBag.BadRequestMessage = "Product Id is Null";
                 return View("BadRequest");
             }
-            OrderCreateModel productOrderModel = _orderService.GetOrderCreateModel(id.Value);
+            OrderCreateModel productOrderModel = _orderService.GetOrderCreateModel(productId.Value, basketsCount.Value);
             return View(productOrderModel);
         }
 

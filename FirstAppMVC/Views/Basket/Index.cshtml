@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FirstAppMVC.Models.BasketItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Корзина</h1>
+
+
+@if (Model != null)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Бренд
+            </th>
+            <th>
+                Цена
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Сумма
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    @item.Brand
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.BasketsCount
+                </td>
+                <td>
+                    @item.Amount
+                </td>
+                <td>
+                    <form asp-action="Order" method="get" asp-controller="Order">
+                        <input type="hidden" name="productId" value="@item.ProductId" />
+                        <input type="hidden" name="basketsCount" value="@item.BasketsCount" />
+                        <input type="submit" value="Заказать" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+        }
+        else
+        {
+        <h2>Ваша корзина пуста</h2>
+        }
+    

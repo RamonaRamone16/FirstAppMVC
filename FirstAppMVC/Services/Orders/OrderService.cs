@@ -19,13 +19,14 @@ namespace FirstAppMVC.Services.Orders
             _unitOfWorkFactory = unitOfWorkFactory;
         }
 
-        public OrderCreateModel GetOrderCreateModel(int id)
+        public OrderCreateModel GetOrderCreateModel(int id, int basketsCount)
         {
             using (UnitOfWork unitOfWork = _unitOfWorkFactory.Create())
             {
                 Product product = unitOfWork.Products.GetAllWithBrandsCategoriesAndOrders()
                     .FirstOrDefault(p => p.Id == id);
                 OrderCreateModel orderCreateModel = Mapper.Map<OrderCreateModel>(product);
+                orderCreateModel.Count = basketsCount;
                 return orderCreateModel;
             }
         }

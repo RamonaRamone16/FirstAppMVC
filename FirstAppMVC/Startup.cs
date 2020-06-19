@@ -21,6 +21,7 @@ using FirstAppMVC.Services.Categories;
 using FirstAppMVC.Services.Brands;
 using FirstAppMVC.Services.Orders;
 using FirstAppMVC.DAL.Entities;
+using FirstAppMVC.Services.Basket;
 
 namespace FirstAppMVC
 {
@@ -57,6 +58,7 @@ namespace FirstAppMVC
             services.AddSingleton<ICategoryService, CategoryService>();
             services.AddSingleton<IBrandService, BrandService>();
             services.AddSingleton<IOrderService, OrderService>();
+            services.AddScoped<IBasketService, BasketService>();
 
             Mapper.Initialize(c => c.AddProfile(new MappingProfile()));
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)

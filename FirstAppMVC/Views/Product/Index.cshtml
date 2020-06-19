@@ -119,34 +119,39 @@
                         CurrentPage = Model.CurrentPage
                     })
             </th>
-            <th></th>
+            <th>
+                
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Products)
         {
-            <tr>
-                <td>
-                    <a asp-action="Order" asp-controller="Order" asp-route-id="@item.Id">
-                        @item.Name
-                    </a>
-                </td>
-                <td>
-                    @item.Brand
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    @item.Category
-                </td>
-                <td>
-                    @item.OrdersCount
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <a asp-action="Edit" asp-controller="Edit" asp-route-id="@item.Id">
+                    @item.Name
+                </a>
+            </td>
+            <td>
+                @item.Brand
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Category
+            </td>
+            <td>
+                @item.OrdersCount
+            </td>
+            <td>
+                <form asp-action="Add" method="post" asp-controller="Basket">
+                    <input type="hidden" name="productId" value="@item.Id" />
+                    <input type="submit" value="Добавить в корзину" />
+                </form>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
