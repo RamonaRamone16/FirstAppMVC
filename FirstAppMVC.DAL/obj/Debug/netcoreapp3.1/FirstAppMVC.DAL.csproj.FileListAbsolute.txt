@@ -1,0 +1,47 @@
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.deps.json
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfoInputs.cache
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfo.cs
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.json
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.dev.json
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\AppMVC\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.deps.json
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.json
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.dev.json
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfoInputs.cache
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfo.cs
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\csharp_group_6_homework_61_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csprojAssemblyReference.cache
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.deps.json
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.json
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.dev.json
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csprojAssemblyReference.cache
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfoInputs.cache
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfo.cs
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\csharp_group_6_homework_62_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csprojAssemblyReference.cache
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfoInputs.cache
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfo.cs
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csproj.CoreCompileInputs.cache
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C#_homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.deps.json
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.json
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.runtimeconfig.dev.json
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\bin\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csprojAssemblyReference.cache
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfoInputs.cache
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.AssemblyInfo.cs
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.csproj.CoreCompileInputs.cache
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.dll
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.pdb
+C:\C# Homeworks\csharp_group_6_homework_63_Aiganysh_Talantbekova\FirstAppMVC\FirstAppMVC.DAL\obj\Debug\netcoreapp3.1\FirstAppMVC.DAL.genruntimeconfig.cache
