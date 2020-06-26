@@ -120,38 +120,38 @@
                     })
             </th>
             <th>
-                
+
             </th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Products)
         {
-        <tr>
-            <td>
-                <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id">
-                    @item.Name
-                </a>
-            </td>
-            <td>
-                @item.Brand
-            </td>
-            <td>
-                @item.Price
-            </td>
-            <td>
-                @item.Category
-            </td>
-            <td>
-                @item.OrdersCount
-            </td>
-            <td>
-                <form asp-action="Add" method="post" asp-controller="Basket">
-                    <input type="hidden" name="productId" value="@item.Id" />
-                    <input type="submit" value="Добавить в корзину" />
-                </form>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Id">
+                        @item.Name
+                    </a>
+                </td>
+                <td>
+                    @item.Brand
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @item.Category
+                </td>
+                <td>
+                    @item.OrdersCount
+                </td>
+                <td>
+                    <form asp-action="Add" method="post" asp-controller="Basket">
+                        <input type="hidden" name="productId" value="@item.Id" />
+                        <input type="submit" value="Добавить в корзину" />
+                    </form>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
@@ -175,22 +175,22 @@
         @for (int i = 1; i <= Model.Paging.PagesCount; i++)
         {
             <b class="mr-2">
-                 @Html.ActionLink($"{i}", "Index", "Product",
-                     new ProductFilter
-                     {
-                         Name = Model.Name,
-                         BrandId = Model.BrandId,
-                         CategoryId = Model.CategoryId,
-                         SortDirection = Model.SortDirection,
-                         SortType = Model.SortType,
-                         PriceFrom = Model.PriceFrom,
-                         PriceTo = Model.PriceTo,
-                         CurrentPage = i
-                     })
+                @Html.ActionLink($"{i}", "Index", "Product",
+                    new ProductFilter
+                    {
+                        Name = Model.Name,
+                        BrandId = Model.BrandId,
+                        CategoryId = Model.CategoryId,
+                        SortDirection = Model.SortDirection,
+                        SortType = Model.SortType,
+                        PriceFrom = Model.PriceFrom,
+                        PriceTo = Model.PriceTo,
+                        CurrentPage = i
+                    })
             </b>
         }
     </div>
-    
+
 
     @if (Model.Paging.HaveNextPage)
         @Html.ActionLink("Вперед >>", "Index", "Product",
@@ -208,5 +208,56 @@
 
 </div>
 
+
+@if (Model.ViewedProducts.Count != 0)
+{
+    <h3>Viewed Products</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Наименоавние
+                </th>
+                <th>
+                    Бренд
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th>
+                    Категория
+                </th>
+                <th>
+                    Количество заказов
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ViewedProducts)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Brand
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        @item.Category
+                    </td>
+                    <td>
+                        @item.OrdersCount
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 

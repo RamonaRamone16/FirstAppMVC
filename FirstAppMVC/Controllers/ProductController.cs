@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using FirstAppMVC.Services.Products;
 using FirstAppMVC.Models;
+using Newtonsoft.Json;
 
 namespace FirstAppMVC.Controllers
 {
@@ -26,6 +27,7 @@ namespace FirstAppMVC.Controllers
                 model.Products = products;
                 model.Categories = _productService.GetSelectListCategories();
                 model.Brands = _productService.GetSelectListBrands();
+                model.ViewedProducts = GetViewedProducts();
 
                 return View(model);
             }
@@ -39,6 +41,7 @@ namespace FirstAppMVC.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
 
         [HttpGet]
         public IActionResult CreateProduct()
@@ -64,7 +67,7 @@ namespace FirstAppMVC.Controllers
                 return View("BadRequest");
             }
 
-
+            AddToViewedProducts(id.Value);
             ProductEditModel product = _productService.GetProductEditModel(id.Value);
             return View(product);
         }
@@ -76,5 +79,38 @@ namespace FirstAppMVC.Controllers
             return RedirectToAction("Index");
         }
 
+        private void AddToViewedProducts(int value)
+        {
+            List<string> allIds = new List<string>();
+            string newId = value.ToString();
+            bool hasProducts = HttpContext.Request.Cookies.TryGetValue("ViewedProducts", out string products);
+            if (hasProducts)
+            {
+                List<string> exIds = JsonConvert.DeserializeObject<List<string>>(products);
+                if (exIds.Contains(newId))
+                {
+                    exIds.Remove(newId);
+                }
+                exIds.Add(newId);
+                allIds = exIds;
+            }
+            else
+            {
+                allIds.Add(newId);
+            }
+            string newProducts = JsonConvert.SerializeObject(allIds);
+            HttpContext.Response.Cookies.Append("ViewedProducts", newProducts);
+        }
+
+        private List<ProductModel> GetViewedProducts()
+        {
+            List<ProductModel> viewedProducts = new List<ProductModel>();
+            bool hasProducts = HttpContext.Request.Cookies.TryGetValue("ViewedProducts", out string products);
+            if (hasProducts)
+            {
+                viewedProducts = _productService.GetViewedProductsById(products);
+            }
+            return viewedProducts;
+        }
     }
 }
