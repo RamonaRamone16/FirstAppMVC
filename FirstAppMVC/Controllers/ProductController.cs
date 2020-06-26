@@ -27,6 +27,7 @@ namespace FirstAppMVC.Controllers
                 model.Products = products;
                 model.Categories = _productService.GetSelectListCategories();
                 model.Brands = _productService.GetSelectListBrands();
+                model.ViewedProducts = GetViewedProducts();
 
                 return View(model);
             }
@@ -40,6 +41,7 @@ namespace FirstAppMVC.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
 
         [HttpGet]
         public IActionResult CreateProduct()
@@ -98,6 +100,17 @@ namespace FirstAppMVC.Controllers
             }
             string newProducts = JsonConvert.SerializeObject(allIds);
             HttpContext.Response.Cookies.Append("ViewedProducts", newProducts);
+        }
+
+        private List<ProductModel> GetViewedProducts()
+        {
+            List<ProductModel> viewedProducts = new List<ProductModel>();
+            bool hasProducts = HttpContext.Request.Cookies.TryGetValue("ViewedProducts", out string products);
+            if (hasProducts)
+            {
+                viewedProducts = _productService.GetViewedProductsById(products);
+            }
+            return viewedProducts;
         }
     }
 }

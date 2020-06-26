@@ -13,5 +13,6 @@ namespace FirstAppMVC.Services.Products
         SelectList GetSelectListBrands();
         ProductEditModel GetProductEditModel(int id);
         void UpdateProduct(ProductEditModel product);
+        List<ProductModel> GetViewedProductsById(string products);
     }
 }

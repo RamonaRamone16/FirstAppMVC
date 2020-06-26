@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FirstAppMVC.Models;
 using FirstAppMVC.Services.Products;
+using Newtonsoft.Json;
 
 namespace FirstAppMVC.UI.Services.Products
 {
@@ -111,6 +112,21 @@ namespace FirstAppMVC.UI.Services.Products
             using (UnitOfWork unitOfWork = _unitOfWorkFactory.Create())
             {
                 unitOfWork.Products.Update(Mapper.Map<Product>(productEditModel));
+            }
+        }
+
+        public List<ProductModel> GetViewedProductsById(string productsIds)
+        {
+            using (UnitOfWork unitOfWork = _unitOfWorkFactory.Create())
+            {
+                List<ProductModel> viewedProducts = new List<ProductModel>();
+                List<Product> allProducts = unitOfWork.Products.GetAllWithBrandsCategoriesAndOrders().ToList();
+                foreach (Product p in allProducts)
+                {
+                    if (productsIds.Contains(p.Id.ToString()))
+                        viewedProducts.Add(Mapper.Map<ProductModel>(p));
+                }
+                return viewedProducts;
             }
         }
     }

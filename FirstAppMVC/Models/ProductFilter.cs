@@ -23,6 +23,7 @@ namespace FirstAppMVC.Models
         [Display(Name = "Brand")]
         public int? BrandId { get; set; }
         public List<ProductModel> Products { get; set; }
+        public List<ProductModel> ViewedProducts { get; set; }
         public SortDirection SortDirection { get; set; }
         public SortType SortType { get; set; }
         public int? CurrentPage { get; set; }
