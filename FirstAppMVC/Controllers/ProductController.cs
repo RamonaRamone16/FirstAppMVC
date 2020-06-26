@@ -63,6 +63,8 @@ namespace FirstAppMVC.Controllers
                 ViewBag.BadRequestMessage = "Product Id is Null";
                 return View("BadRequest");
             }
+
+
             ProductEditModel product = _productService.GetProductEditModel(id.Value);
             return View(product);
         }

@@ -41,6 +41,12 @@ namespace FirstAppMVC
             }
             );
 
+            //services.AddAuthentication().AddGoogle(options =>
+            //{
+            //    options.ClientId = "373489560431-ei6tf5tv7bi4onvunmpi2ovt669kek7o.apps.googleusercontent.com";
+            //    options.ClientSecret = "_GecxjCaQR23jjE50oli3CG8";
+            //});
+
             services.AddSingleton<IApplicationDbContextFactory>(
                 sp => new ApplicationDbContextFactory(optionBuilder.Options, new EntityConfigurationContainer()));
 
